@@ -5,18 +5,17 @@
 
 1 { mid(Act) : midpoints(Init,Act,Close,_,_) } 1.
 
-%% action_pair(A1,A2) :- 
-%% 	action(A1, A, B);
-%% 	action(A2, A, B).
-
-%action_at(t, action(_,_,_)) :- action
 
 
-%% #program step(t)
+1{ storify(ini, Text) : initial_action(Init, _, _, Text) } 1 :- start(Init).
+1{ storify(mid, Text) : idiomatics(Act,_,Text,_) } 1 :- mid(Act).
+1{ storify(end, Text) : closing_action(Close, _, Text)} 1 :- end(Close).
+
 
 #show start/1.
-#show end/1.
 #show mid/1.
+#show end/1.
+#show storify/2.
 
 
 %% #script (python)
