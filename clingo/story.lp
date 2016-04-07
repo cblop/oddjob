@@ -18,18 +18,24 @@ char(X) :- charInScene(_, X).
 
 intro(ID, X) :- charInScene(ID, X), not charInScene(IDprev, X), IDprev < ID, scene(IDprev,_,_,_,_).
 
-scene(1, "Alice", "Bob", pp, 3).
-scene(2, "Alice", "Bob", pp, 3).
-scene(3, "Alice", "Eve", pp, 3).
+sceneDef(1, hero, sidekick).
+sceneDef(2, hero, sidekick).
+sceneDef(3, hero, villain).
+
+char(hero, ("Alice", "The Hero")).
+char(sidekick, ("Bob","The Sidekick")).
+char(villain, ("Eve","The Villan")).
+
+scene(ID, char(Role,Strings), char(RoleB,StringsB), pp, 3) :- sceneDef(ID, Role, RoleB), char(Role, Strings), char(RoleB,StringsB).
 %% sceneDef(ID, A, B, PlotPoint, Length).
 %% sceneInfo(ID, A, B).
 
 %% storyDef(SceneCount).
 %% storyInfo(StartScene, EndScene, SceneCount).
 
-1{ storify(ID, 0, @chars(Text,A,B)) : initial_action(Init, _, _, Text) } 1 :- start(ID,1,Init), scene(ID, A, B, _, _).
-1{ storify(ID, ActNo, @chars(Text,A,B)) : idiomatics(Act,_,_,Text) } 1 :- action(ID,ActNo,Act), scene(ID, A, B, _, _).   %TODO fancytext in idiomatics final position
-1{ storify(ID, ActNo+1, @chars(Text,A,B)) : closing_action(Close, _, Text)} 1 :- end(ID,ActNo,Close), scene(ID, A, B, _, _).
+1{ storify(ID, 0, @charsF(Text,A,B)) : initial_action(Init, _, _, Text) } 1 :- start(ID,1,Init), scene(ID, char(_,A), char(_,B), _, _).
+1{ storify(ID, ActNo, @chars(Text,A,B)) : idiomatics(Act,_,_,Text) } 1 :- action(ID,ActNo,Act), scene(ID, char(_,A), char(_,B), _, _).   %TODO fancytext in idiomatics final position
+1{ storify(ID, ActNo+1, @chars(Text,A,B)) : closing_action(Close, _, Text)} 1 :- end(ID,ActNo,Close), scene(ID, char(_,A), char(_,B), _, _).
 
 
 #show start/3.
@@ -42,10 +48,14 @@ scene(3, "Alice", "Eve", pp, 3).
 
 #script (python)
 import gringo
-
+import random
 
 def chars(text, a, b):
-	return text.replace("A", a).replace("B", b)
+	return text.replace("A", a[random.randint(0, 1)]).replace("B", b[random.randint(0, 1)])
+
+def charsF(text, a, b):
+	return text.replace("A", a[0] + " (" + a[1] + ")").replace("B", b[0] + " (" + b[1] + ")")
+
 
 def on_model(model):
 	story = {}
