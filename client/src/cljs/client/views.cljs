@@ -4,22 +4,20 @@
               [client.db :refer [default-db]]
               [re-com.core :as com]))
 
-(def trope (atom ""))
 (def tab-list [{:id :tab1 :label "Tropes"}
                {:id :tab2 :label "Timeline"}
                {:id :tab3 :label "Story"}])
 
 ;; (def current-tab (reagent/atom (:id (first tab-list))))
 
-(def tropes (atom [trope]))
-
 (def spacer [com/gap :size "5px"])
 (def gap [com/gap :size "15px"])
 
 (defn change-trope [])
 
-(defn trope-select []
-  (let [selected-trope (reagent/atom nil)
+;; rewrite for nth and subscription
+(defn trope-select [n]
+  (let [our-tropes (re-frame/subscribe [:our-tropes])
         all-tropes (re-frame/subscribe [:tropes])]
     [com/v-box
      :children [
@@ -28,9 +26,32 @@
                 [com/single-dropdown
                  :width "300px"
                  :choices @all-tropes
-                 :model selected-trope
+                 :model (nth @our-tropes n)
                  :filter-box? true
                  :on-change #(change-trope)]]]))
+
+(defn char-select [role n]
+  (let [all-characters (re-frame/subscribe [:characters])
+        our-tropes (re-frame/subscribe [:our-tropes])]
+    [com/v-box
+     :children [
+                [com/label :label (clojure.string/capitalize role)]
+                spacer
+                [com/single-dropdown
+                 :width "200px"
+                 :choices @all-characters
+                 :model nil
+                 :filter-box? true
+                 :on-change #(change-trope)]]]))
+
+(defn characters [n]
+  (let []
+    [com/v-box
+     :style {:padding "20px" :background-color "#ff9999" :border "#ffdddd solid 2px"}
+     :children [spacer
+                [char-select "hero" n]
+                [char-select "villain" n]]]
+     ))
 
 (defn add-trope []
   [com/h-box
@@ -38,26 +59,31 @@
    :children [
               [com/md-circle-icon-button
                :md-icon-name "zmdi-plus"
-               :on-click #()]]])
+               :on-click #(re-frame/dispatch [:add-trope])]]])
 
-(defn trope-box []
+;; rewrite for nth and subscription
+(defn trope-box [n]
   [com/v-box
    :style {:background-color "#f9ffe6"
            :border "2px solid #ecffb3"}
    :padding "10px"
-   :children [[trope-select]
-              ]])
+   :children [[trope-select n]
+              [characters n]
+              ]
+   ])
 
 (defn trope-boxes []
-  [com/v-box
-   :margin "50px"
-   :width "400px"
-   :children [[trope-box]
-              gap
-              [add-trope]]])
+  (let [our-tropes (re-frame/subscribe [:our-tropes])]
+    [com/v-box
+     :children (into [] (apply concat (for [t (range (count @our-tropes))] [[trope-box t] gap])))]))
 
 (defn trope-content []
-  [trope-boxes])
+  [com/v-box
+   :margin "50px"
+   :width "500px"
+   :children [
+              [trope-boxes]
+              [add-trope]]])
 
 (defn timeline-content [])
 

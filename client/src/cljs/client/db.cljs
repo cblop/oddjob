@@ -13,6 +13,8 @@
             {:id "chekhovs-gun" :label "Chekhov's Gun"}]
    :archetypes [{:id "hero" :label "The Hero"}
                 {:id "villain" :label "The Villain"}]
-   :our-tropes []
+   :characters [{:id "luke-skywalker" :label "Luke Skywalker"}
+                {:id "darth-vader" :label "Darth Vader"}]
+   :our-tropes [nil]
    :timeline []
    :story ""})

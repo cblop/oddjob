@@ -3,6 +3,16 @@
     (:require [re-frame.core :as re-frame]))
 
 (re-frame/register-sub
+ :our-tropes
+ (fn [db _]
+   (reaction (:our-tropes @db))))
+
+(re-frame/register-sub
+ :characters
+ (fn [db _]
+   (reaction (:characters @db))))
+
+(re-frame/register-sub
  :tropes
  (fn [db _]
    (reaction (:tropes @db))))
