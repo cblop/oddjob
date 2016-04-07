@@ -93,7 +93,7 @@ role("Hans Moleman",(old_man;muggle;the_mole)).
 role("Tina Fey",(actress; comedian)).
 role("Abraham Lincoln",(president; political_leader)).
 role("Adam Sandler",(actor; comedian)).
-role("The Joker",(maniac; mad_scientistman; criminal; terrorist; clown; for_teh_evulz; magnificent_bastard; manipulative_bastard; person_of_mass_destruction)).
+role("The Joker",(maniac; madman; criminal; terrorist; clown; for_teh_evulz; magnificent_bastard; manipulative_bastard; person_of_mass_destruction)).
 role("Eliot Ness",(crime_fighter; policeman; fbi_agent)).
 role("Al Gore",(campaigner; politician; vice_president)).
 role("Alan Greenspan",(economist; advisor)).
@@ -135,7 +135,7 @@ role("Bruce Springsteen",(singer; composer; rock_singer)).
 role("Bruce Wayne",(billionaire; philanthropist; orphan; lovable_rogue; mad_scientist; eccentric_mentor)).
 role("Commissioner James Gordon",(policeman; cop; police_commissioner; eccentric_mentor; hero)).
 role("Harvey Dent",(lawyer; prosecutor; district_attorney; knight_templar; mad_scientist)).
-role("Batman",(hero; superhero; ah; lovable_rogue)).
+role("Batman",(hero; superhero; anti_hero; lovable_rogue)).
 role("Buck Rogers",(astronaut; hero; ensemble_dark_horse)).
 role("Buddha",(religious_leader; philosopher)).
 role("Buzz Aldrin",(astronaut; pilot)).
@@ -168,7 +168,7 @@ role("Cosmo Kramer",(scrounger; neighbour; the_scrappy; muggle; redshirts)).
 role("Courtney Love",(rock_singer; singer; widow)).
 role("Croesus",(king; billionaire)).
 role("Herodotus",(historian; writer)).
-role("Daffy Duck; Duck",(the_scrappy; the_klutz)).
+role("Daffy Duck", (duck;the_scrappy; the_klutz)).
 role("Dame Edna Everage",(cross_dresser; transvestite; female_impersonator)).
 role("Dan Brown",(writer; novelist)).
 role("Dan Quayle",(politician; vice_president)).
@@ -177,7 +177,7 @@ role("Dante Alighieri",(writer; poet)).
 role("Darth Maul",(villain; henchman; jedi_knight; the_dragon; turncoat; eccentric_mentor)).
 role("Darth Vader",(villain; father; henchman; jedi_knight; the_dragon; turncoat; eccentric_mentor)).
 role("Davy Crockett",(frontiersman; politician; hero; hunter; outdoorsman)).
-role("David Beckham",(sportsman; athlete; fooltballer; fashion_model)).
+role("David Beckham",(sportsman; athlete; footballer; fashion_model)).
 role("David Bowie",(singer; composer; artist)).
 role("David Byrne",(singer; composer)).
 role("David Lee Roth",(rock_singer; singer)).
@@ -191,7 +191,7 @@ role("Dick Cheney",(politician; vice_president)).
 role("Dolly Parton",(country_singer; singer)).
 role("Don Vito Corleone",(crimeboss; father; anti_villain; the_chessmaster; lovable_rogue)).
 role("Don King",(promoter; businessman)).
-role("Donald Duck; Duck",(fool; the_scrappy)).
+role("Donald Duck", (duck; fool; the_scrappy)).
 role("Donald Trump",(businessman; billionaire; developer)).
 role("Doris Day",(singer; actress)).
 role("Dorothy Parker",(writer; humorist)).
@@ -201,7 +201,7 @@ role("Eddie Murphy",(actor; comedian)).
 role("Eddie Van Halen",(guitarist; rock_singer; singer; musician; composer)).
 role("Eddy Merckx",(athlete; sportsman; cyclist)).
 role("Edward Hopper",(artist; painter)).
-role("Elmer Fudd; Hunter",(the_klutz;creators_pet)).
+role("Elmer Fudd", (hunter; the_klutz;creators_pet)).
 role("Elmore Leonard",(writer; novelist)).
 role("Elvis Presley",(rock_singer; singer; actor)).
 role("Emily Dickinson",(poet; writer)).
@@ -245,12 +245,12 @@ role("Mikhail Gorbachev",(politician; president; political_leader)).
 role("Grace Kelly",(actress; princess)).
 role("Greta Garbo",(actress; recluse)).
 role("Groucho Marx",(comedian; host; writer; actor)).
-role("H.P. Lovecraft; Writer",(muggle; the_storyteller; mad_scientist)).
+role("H.P. Lovecraft", (writer; muggle; the_storyteller; mad_scientist)).
 role("Han Solo",(hero; smuggler; rebel; captain; lovable_rogue; anti_hero)).
 role("Jabba the Hutt",(crimeboss; villain; the_chessmaster; corrupt_corporate_executive)).
 role("Hannibal Lecter",(serial_killer; psychiatrist; cannibal; manipulative_bastard; the_chessmaster; mad_scientist)).
 role("Harry Houdini",(escapologist; magician)).
-role("Harry Potter",(magician; wizard; schoolkid; student; hero; kh; rebellious_spirit; lovable_rogue; the_chosen_one)).
+role("Harry Potter",(magician; wizard; schoolkid; student; hero; kid_hero; rebellious_spirit; lovable_rogue; the_chosen_one)).
 role("Lord Voldemort",(wizard; magician; villain; psychopath; necromancer; big_bad; manipulative_bastard; the_chessmaster; for_teh_evulz; person_of_mass_destruction; mad_scientist)).
 role("Albus Dumbledore",(wizard; magician; professor; teacher; hero; eccentric_mentor; rebel_leader; person_of_mass_destruction)).
 role("Henry Ford",(businessman; industrialist)).
@@ -258,7 +258,7 @@ role("Henry James",(writer; novelist; playwright)).
 role("Henry Kissinger",(politician; advisor)).
 role("Henry Miller",(writer; novelist)).
 role("Homer Simpson",(father; fool; fool; the_storyteller)).
-role("Howard Hughes",(billionaire; philanthropist; anti_villainiator; recluse)).
+role("Howard Hughes",(billionaire; philanthropist; aviator; recluse)).
 role("Howard Stern",(radio_personality; radio_host)).
 role("Hugh Jackman",(actor; singer; hero; gentle_giant)).
 role("Hulk Hogan",(wrestler; strongman; hero; gentle_giant; dumb_muscle)).
@@ -333,7 +333,7 @@ role("Lou Reed",(singer; musician; composer)).
 role("Louis Armstrong",(singer; musician; composer)).
 role("Luciano Pavarotti",(singer; opera_singer)).
 role("Ludwig Van Beethoven",(musician; composer; pianist)).
-role("Luis Suarez",(soccer_player; athlete; fooltballer)).
+role("Luis Suarez",(soccer_player; athlete; footballer)).
 role("Luke Skywalker",(hero; farm_boy; jedi_knight; the_chosen_one; rebel_leader; lovable_rogue)).
 role("Niccolo Machiavelli",(advisor; philosopher; writer; political_advocate)).
 role("Mahatma Gandhi",(religious_leader; philosopher; campaigner; ascetic)).
@@ -379,8 +379,8 @@ role("Nostradamus",(crank; forecaster; eldritch_abomination; manipulative_bastar
 role("Obi-wan Kenobi",(mentor; hero; jedi_knight; eccentric_mentor)).
 role("Oprah Winfrey",(tv_host; publisher)).
 role("Orson Welles",(director; writer; actor)).
-role("Wilbur Wright",(inventor; pilot; anti_villainiator)).
-role("Orville Wright",(inventor; pilot; anti_villainiator)).
+role("Wilbur Wright",(inventor; pilot; aviator)).
+role("Orville Wright",(inventor; pilot; aviator)).
 role("Ozzy Osbourne",(singer; musician)).
 role("P. T. Barnum",(showman; businessman)).
 role("Pablo Picasso",(artist; painter; sculptor)).
@@ -396,7 +396,7 @@ role("Peter Jackson",(director; writer)).
 role("Peter Pan",(child; hero; kid_hero; rebel_leader; lovable_rogue)).
 role("Peter Parker",(nerd; geek; student; lovable_rogue; superhero; hero; star_crossed_lovers; rebellious_spirit)).
 role("Adrian Monk",(detective; hyperchondriac)).
-role("Pontius Pilate; Political Leader",(anti_villain; knight_templar)).
+role("Pontius Pilate", (political_leader; anti_villain; knight_templar)).
 role("Pope Benedict XVI",(religious_leader; pope)).
 role("Pope Francis",(religious_leader; pope)).
 role("Quentin Tarantino",(director; writer; actor)).
@@ -413,7 +413,7 @@ role("Ringo Starr",(musician; drummer)).
 role("Robert Redford",(actor; campaigner; director)).
 role("Robin Hood",(thief; hero; political_advocate; campaigner; rebel; lovable_rogue)).
 role("Robinson Crusoe",(recluse; hero)).
-role("Rocky Balboa; Boxer",(hero; gentle_giant; dumb_muscle; lovable_rogue)).
+role("Rocky Balboa", (boxer; hero; gentle_giant; dumb_muscle; lovable_rogue)).
 role("Ron Weasley",(magician; friend; schoolkid; student; ensemble_dark_horse; the_klutz; fool)).
 role("Rudy Giuliani",(mayor; politician)).
 role("Rupert Murdoch",(businessman; ceo; newspaper_magnate; media_tycoon; billionaire; manipulative_bastard; corrupt_corporate_executive)).
@@ -425,7 +425,7 @@ role("Philip Marlowe",(private_detective; detective)).
 role("Samson",(biblical_hero; strongman)).
 role("Samuel Johnson",(writer; lexicographer)).
 role("Samuel Pepys",(diarist; novelist)).
-role("Santa Claus; Philanthropist",(hero; gentle_giant)).
+role("Santa Claus", (philanthropist; hero; gentle_giant)).
 role("Savonarola",(religious_leader; tyrant; monk)).
 role("Scipio Africanus",(military_leader; general)).
 role("Sherlock Holmes",(private_detective; detective; hero; eccentric_mentor)).
@@ -438,7 +438,7 @@ role("Stephen Colbert",(tv_host; comedian; humorist)).
 role("Mr. Krabs",(boss; crab; businessman)).
 role("Steve Ballmer",(ceo; businessman)).
 role("Steve Martin",(actor; comedian; writer; musician)).
-role("Stewie Griffin",(child; hero; kh; the_scrappy; mad_scientist)).
+role("Stewie Griffin",(child; hero; kid_hero; the_scrappy; mad_scientist)).
 role("Sun Tzu",(general; military_leader; philosopher)).
 role("Svengali",(businessman; villain; manipulative_bastard; the_chessmaster; corrupt_corporate_executive)).
 role("Sylvester Stallone",(actor; writer; director; dumb_muscle; muggle)).
@@ -466,25 +466,25 @@ role("Walt Disney",(writer; director; ceo; businessman; the_storyteller; eccentr
 role("Walter White",(teacher; crimeboss; father; husband; scientist; big_bad; the_chessmaster; anti_villain; turncoat; corrupt_corporate_executive; mad_scientist)).
 role("Warren Buffett",(investor; billionaire; businessman)).
 role("Wayne Gretzky",(ice_hockey_player; sportsman; athlete)).
-role("Wayne Rooney",(soccer_player; athlete; fooltballer)).
+role("Wayne Rooney",(soccer_player; athlete; footballer)).
 role("Weird Al Yankovic",(singer; musician; comedian; humorist)).
 role("William Randolph Hearst",(businessman; ceo; newspaper_magnate; media_tycoon; billionaire)).
 role("William Shakespeare",(writer; poet; playwright; eccentric_mentor; the_storyteller)).
-role("William Shatner; Actor",(muggle; eccentric_mentor)).
+role("William Shatner", (actor; muggle; eccentric_mentor)).
 role("Willy Wonka",(confectioner; recluse; eccentric_mentor; the_storyteller; rebellious_spirit)).
 role("Kenny G",(musician; composer; saxophonist)).
 role("Woody Guthrie",(singer; musician; campaigner; folk_singer)).
 role("Wyatt Earp",(lawman; sheriff)).
 role("Zsa Zsa Gabor",(actress; divorcee)).
-role("Pinocchio; Puppet",(kh; fool; the_storyteller; lovable_rogue)).
+role("Pinocchio", (puppet; kid_hero; fool; the_storyteller; lovable_rogue)).
 role("Yoda",(guru; teacher; philosopher; jedi_knight; eccentric_mentor; hero; rebel_leader)).
 role("Ron Burgundy",(news_reader; anchorman; narcissist; fool; the_klutz)).
 role("Xena",(warrior; princess; action_girl; hero; rebellious_spirit)).
 role("Joey Tribbiani",(friend; actor)).
 role("Chandler Bing",(friend; software_engineer; ensemble_dark_horse; the_klutz)).
 role("Monica Geller",(friend; chef; the_klutz; creators_pet)).
-role("Ross Geller",(friend; paleontologist; the_klutz; the_scrappy_; creators_pet; tsundere)).
-role("Rachel Green; Friend",(the_klutz; _the_scrappy; creators_pet; tsundere)).
+role("Ross Geller",(friend; paleontologist; the_klutz; the_scrappy; creators_pet; tsundere)).
+role("Rachel Green", (friend;the_klutz; the_scrappy; creators_pet; tsundere)).
 role("Phoebe Buffay",(friend; guitarist; the_klutz; the_scrappy; creators_pet; tsundere)).
 role("Liz Lemon",(writer; humorist; tsundere; the_scrappy; creators_pet)).
 role("Jack Donaghy",(executive; businessman; tsundere; the_scrappy; creators_pet)).
@@ -495,9 +495,9 @@ role("Gustavo Fring",(criminal; businessman; restauranteur; big_bad; manipulativ
 role("Leroy Jethro Gibbs",(detective; policeman)).
 role("Tony DiNozzo",(detective; policeman)).
 role("Timothy McGee",(detective; policeman; geek; nerd)).
-role("Tyrion Lannister; Dwarf",(lovable_rogue; superhero; rebellious_spirit)).
-role("Cersei Lannister; Lady",(manipulative_bastard; the_chessmaster; anti_villain; star_crossed_lovers)).
-role("Jaime Lannister; Warrior",(knight_templar; the_dragon; star_crossed_lovers; lovable_rogue)).
+role("Tyrion Lannister", (dwarf;lovable_rogue; superhero; rebellious_spirit)).
+role("Cersei Lannister", (lady;manipulative_bastard; the_chessmaster; anti_villain; star_crossed_lovers)).
+role("Jaime Lannister", (warrior;knight_templar; the_dragon; star_crossed_lovers; lovable_rogue)).
 role("Chewbacca",(copilot; sidekick; hero; gentle_giant)).
 role("Marty McFly",(teenager; hero; kid_hero; lovable_rogue)).
 role("Doc Emmett Brown",(scientist; engineer; mad_scientist; hero; eccentric_mentor)).
@@ -512,7 +512,7 @@ role("Polonius",(counsellor; advisor; politician)).
 role("Romeo Montague",(aristocrat; lover; star_crossed_lovers; lovable_rogue)).
 role("Juliet Capulet",(aristocrat; lover; star_crossed_lovers; mary_sue)).
 role("Adolf Eichmann",(nazi_bureaucrat; bureaucrat; colonel; fugitive; the_dragon; knight_templar)).
-role("Bruce Banner; Scientist",(hero; anti_hero; genius_bruiser; superhero; star_crossed_lovers; mad_scientist; gentle_giant; dumb_muscle)).
+role("Bruce Banner", (scientist; hero; anti_hero; genius_bruiser; superhero; star_crossed_lovers; mad_scientist; gentle_giant; dumb_muscle)).
 role("Frasier Crane",(psychiatrist; radio_host; snob)).
 role("Niles Crane",(psychiatrist; snob)).
 role("Freddy Krueger",(predator; serial_killer; big_bad; eldritch_abomination; for_teh_evulz)).
@@ -520,13 +520,13 @@ role("Keyser Soze",(crimeboss; killer; big_bad; the_chessmaster; magnificent_bas
 role("Daphne Moon",(therapist; helper)).
 role("Barney Gumble",(barfly; drunk; fool; the_scrappy; the_klutz)).
 role("Fred Flintstone",(caveman; father; fool; the_scrappy; the_klutz)).
-role("Barney Rubble; Caveman",(fool; the_scrappy; the_klutz)).
+role("Barney Rubble", (caveman; fool; the_scrappy; the_klutz)).
 role("Michael Myers",(serial_killer; killer; villain; big_bad; eldritch_abomination; for_teh_evulz)).
 role("Jason Voorhees",(serial_killer; killer; villain; big_bad; eldritch_abomination; for_teh_evulz)).
 role("Barney Stinson",(pickup_artist; womanizer; lothario; muggle; lovable_rogue)).
 role("Professor Charles Xavier",(scientist; telepath; professor; teacher; hero; superhero; eccentric_mentor; person_of_mass_destruction; rebellious_spirit)).
 role("Rocket Raccoon",(raccoon; bounty_hunter; anti_hero; mad_scientist)).
-role("Groot; Tree",(hero; gentle_giant; ensemble_dark_horse)).
+role("Groot", (tree; hero; gentle_giant; ensemble_dark_horse)).
 role("Shrek",(ogre; hero; anti_hero; gentle_giant; star_crossed_lovers; lovable_rogue; person_of_mass_destruction)).
 role("Wile E. Coyote", (coyote; creators_pet;the_scrappy)).
 role("George Smiley",(spy; bureaucrat)).
@@ -538,7 +538,7 @@ role("John McClane",(policeman; cop; detective; hero; lovable_rogue; gentle_gian
 role("Optimus Prime",(robot; hero; captain; the_storyteller; rebel_leader)).
 role("Jack Sparrow",(pirate; hero; captain; rebellious_spirit; rebel_leader; lovable_rogue)).
 role("Edward Scissorhands",(robot; hero)).
-role("Olive Oyl; Girlfriend",(mary_sue; star_crossed_lovers)).
+role("Olive Oyl", (girlfriend; mary_sue; star_crossed_lovers)).
 role("Popeye",(sailor; hero; hero; star_crossed_lovers)).
 role("Sideshow Bob",(sidekick; villain; killer; the_chessmaster; manipulative_bastard; turncoat; the_klutz)).
 role("John Merrick",(circus_performer; freak)).
@@ -556,7 +556,7 @@ role("Bane",(villain; terrorist; bodybuilder; big_bad; the_dragon; the_chessmast
 role("Hans Gruber",(villain; terrorist; thief; big_bad; manipulative_bastard; the_chessmaster; corrupt_corporate_executive)).
 role("Antonio Salieri",(composer; musician; pianist; anti_villain; muggle)).
 role("Saruman the White",(wizard; villain; traitor; the_dragon; manipulative_bastard; the_chessmaster; knight_templar; corrupt_corporate_executive; turncoat; person_of_mass_destruction)).
-role("Gandalf the Grey",(wizard; hero; bbw; eccentric_mentor; person_of_mass_destruction; the_storyteller; rebel_leader; gentle_giant)).
+role("Gandalf the Grey",(wizard; hero; badass_bookworm; eccentric_mentor; person_of_mass_destruction; the_storyteller; rebel_leader; gentle_giant)).
 role("Sauron",(wizard; villain; traitor; big_bad; eldritch_abomination; the_chessmaster; for_teh_evulz; eccentric_mentor; person_of_mass_destruction)).
 role("Maleficent",(stepmother; queen; big_bad; the_chessmaster; for_teh_evulz; person_of_mass_destruction; the_storyteller)).
 role("Nigel Tufnel",(musician; pianist; guitarist; songwriter)).
@@ -602,8 +602,8 @@ role("John F. Kennedy",(president; political_leader; womanizer)).
 role("Dominique Strauss-Kahn",(economist; lecher; politician)).
 role("Alexander the Great",(king; royal; political_leader; military_leader; conqueror)).
 role("Pocahontas",(princess; heroine; action_girl; star_crossed_lovers; rebellious_spirit)).
-role("Amelia Earhart",(feminist; anti_villainiator; anti_villainiatrix; pilot; pioneer; rebellious_spirit; action_girl)).
-role("Charles Lindbergh",(anti_villainiator; pilot; pioneer)).
+role("Amelia Earhart",(feminist; aviator; aviatrix; pilot; pioneer; rebellious_spirit; action_girl)).
+role("Charles Lindbergh",(aviator; pilot; pioneer)).
 role("Frida Kahlo",(artist; painter)).
 role("Bradley Manning",(soldier; informant; campaigner; prisoner)).
 role("Chelsea Manning",(soldier; informant; campaigner; prisoner)).
@@ -638,8 +638,8 @@ role("Red Sonja",(warrior; she_devil)).
 role("King Richard III",(king; royal; political_leader)).
 role("Dr. Henry Jekyll",(doctor; scientist; manipulative_bastard; knight_templar; mad_scientist)).
 role("Mr. Edward Hyde",(villain; thug; strongman; eldritch_abomination; the_dragon; person_of_mass_destruction; dumb_muscle)).
-role("Travis Bickle",(assassin; rebellious_spiritcontent; vigilante; loner)).
-role("Tyler Durden",(rebellious_spiritcontent; outcast; dissident; nihilist)).
+role("Travis Bickle",(assassin; malcontent; vigilante; loner)).
+role("Tyler Durden",(malcontent; outcast; dissident; nihilist)).
 role("Sam Winchester",(hunter; demonologist; vampire_slayer; hero; anti_hero; the_chessmaster)).
 role("Jesus Christ",(messiah; preacher; religious_leader; guru; person_of_mass_destruction; eccentric_mentor; gentle_giant; rebellious_spirit; superhero)).
 role("Lucifer",(demon; devil; villain; big_bad; the_chessmaster; for_teh_evulz; person_of_mass_destruction)).
@@ -675,10 +675,10 @@ role("Austin Powers",(spy; adventurer; secret_agent; lovable_rogue)).
 role("Basil Fawlty",(hotelier; snob; creators_pet)).
 role("Bruce Lee",(actor; martial_artist; hero)).
 role("Carrie Bradshaw",(writer; shopper; diarist; tsundere)).
-role("Charles Foster Kane",(billionaire; media_tycoon; publisher; dumb_muscle_)).
+role("Charles Foster Kane",(billionaire; media_tycoon; publisher; dumb_muscle)).
 role("Colin Farrell",(actor; lothario; muggle)).
 role("Colonel Sanders",(businessman; restauranteur; hero)).
-role("Robert Langdon",(professor; symbologist; ; eccentric_mentor)).
+role("Robert Langdon",(professor; symbologist; eccentric_mentor)).
 role("Daniel Craig",(actor; action_star; muggle)).
 role("Dorian Gray",(narcissist; gentleman; star_crossed_lovers)).
 role("Evel Knievel",(stuntman; performer; motorcyclist; daredevil; rebellious_spirit)).
@@ -761,7 +761,7 @@ role("Ophelia",(maiden; daughter; star_crossed_lovers)).
 role("Pepe Le Pew",(womanizer; skunk; lovable_rogue)).
 role("Dr. Strangelove",(scientist; advisor; mad_scientist)).
 role("Scott Evil",(son; criminal; anti_villain)).
-role("Naomi Camanipulative_bastardell",(fashion_model; narcissist; muggle)).
+role("Naomi Campbell",(fashion_model; narcissist; muggle)).
 role("Norman Bates",(son; transvestite; hotelier; psychopath; anti_villain)).
 role("Osama Bin Laden",(terrorist; criminal; zealot; big_bad)).
 role("Saddam Hussein",(terrorist; despot; dictator; big_bad)).
@@ -786,7 +786,7 @@ role("Groundskeeper Willie MacDougal",(groundskeeper; janitor; muggle)).
 role("Glenn Quagmire",(pilot; neighbour; hedonist; voyeur; pervert; lovable_rogue)).
 role("Mark Zuckerberg",(software_engineer; technologist; pioneer; ceo; eccentric_mentor)).
 role("Queen Elizabeth I",(queen; royal; political_leader; tsundere)).
-role("Dean Winchester",(hunter; demonologist; vampire_slayer; hero; ant_hero)).
+role("Dean Winchester",(hunter; demonologist; vampire_slayer; hero; anti_hero)).
 role("Eric Cartman",(child; schoolkid; bully; tsundere)).
 role("Boris Johnson",(mayor; political_leader; muggle)).
 role("Fagin",(fence; criminal; thief; miser; mooks)).
