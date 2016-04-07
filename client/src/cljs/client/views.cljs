@@ -165,7 +165,7 @@
        :justify :center
        :children [
                   [com/title
-                   :label "The OddJob Story Shaper"
+                   :label "OddJob's Subversive Stories"
                    :level :level1]
                   ]
        ]))
