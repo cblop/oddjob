@@ -3,18 +3,16 @@
     (:require [re-frame.core :as re-frame]))
 
 
-(defn in? 
+(defn in?
   "true if coll contains elm"
-  [coll elm]  
+  [coll elm]
   (some #(= elm %) coll))
 
 (re-frame/register-sub
  :chars-for-archetype
  (fn [db [_ arch]]
    (let [chars (filter #(in? (:archetypes %) arch) (:characters @db))]
-     (do
-       (println (str "chars: " chars))
-       (reaction chars)))
+     (reaction chars))
    ))
 
 (re-frame/register-sub

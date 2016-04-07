@@ -31,7 +31,7 @@
                  :on-change #(re-frame/dispatch [:change-trope n %])]]]))
 
 (defn char-select [role n]
-  (let [all-characters (re-frame/subscribe [:characters])
+  (let [
         chars (re-frame/subscribe [:chars-for-archetype role])
         our-tropes (re-frame/subscribe [:our-tropes])]
     [com/v-box
@@ -41,7 +41,8 @@
                 [com/single-dropdown
                  :width "200px"
                  :choices @chars
-                 :model nil
+                 ;; TODO: make random
+                 :model (:id (first @chars))
                  :filter-box? true
                  :on-change #(change-trope)]]]))
 
@@ -88,7 +89,7 @@
               [com/button
                :class "btn-danger"
                :label "Delete"
-               :on-click #(re-frame/dispatch [:remove-trope])]]]
+               :on-click #(re-frame/dispatch [:remove-trope n])]]]
   )
 
 ;; rewrite for nth and subscription
@@ -107,7 +108,7 @@
                                       [subvert-trope]
                                       gap
                                       (if (> n 0)
-                                        [remove-trope])]]
+                                        [remove-trope n])]]
                           ]
               ])
 

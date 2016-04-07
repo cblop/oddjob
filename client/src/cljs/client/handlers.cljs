@@ -3,15 +3,13 @@
               [client.db :as db]))
 
 
-(defn vec-remove
-  "remove elem in coll"
-  [coll pos]
-  (vec (concat (subvec coll 0 pos) (subvec coll (inc pos)))))
+(defn drop-nth [n coll]
+  (keep-indexed #(if (not= %1 n) %2) coll))
 
 (re-frame/register-handler
  :add-trope
  (fn [db [_ id]]
-     (assoc db :our-tropes (conj (:our-tropes db) nil))))
+   (assoc db :our-tropes (conj (vec (:our-tropes db)) nil))))
 
 (re-frame/register-handler
  :change-trope
@@ -24,7 +22,8 @@
  :remove-trope
  (fn [db [_ n]]
    (let [a (:our-tropes db)]
-     (assoc db :our-tropes (vec-remove a n)))))
+     (do (println (str "drop: " n))
+         (assoc db :our-tropes (drop-nth n a))))))
 
 (re-frame/register-handler
  :subvert-trope
