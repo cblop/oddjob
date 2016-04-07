@@ -9,31 +9,29 @@
 (re-frame/register-handler
  :add-trope
  (fn [db [_ id]]
-   (assoc db :our-tropes (conj (vec (:our-tropes db)) nil))))
+   (assoc db :our-tropes (conj (vec (:our-tropes db)) {:id nil :subverted false}))))
+
+(re-frame/register-handler
+ :subvert-trope
+ (fn [db [_ n]]
+   (let [sub (:subverted (nth (:our-tropes db) n))]
+     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :subverted] (not sub))))))
 
 (re-frame/register-handler
  :change-trope
  (fn [db [_ n id]]
-   (println (str "change: " n ", " id))
-   (println (:our-tropes db))
-   (assoc db :our-tropes (assoc (:our-tropes db) n id))))
+   (assoc db :our-tropes (assoc (:our-tropes db) n {:id id :subverted false}))))
 
 (re-frame/register-handler
  :remove-trope
  (fn [db [_ n]]
    (let [a (:our-tropes db)]
-     (do (println (str "drop: " n))
-         (assoc db :our-tropes (drop-nth n a))))))
-
-(re-frame/register-handler
- :subvert-trope
- (fn [db [_ n]]
-   db))
+         (assoc db :our-tropes (drop-nth n a)))))
 
 (re-frame/register-handler
  :trope-selected
  (fn [db [_ n id]]
-   (assoc-in db [:our-tropes n] id)))
+   (assoc-in db [:our-tropes n] {:id id :subverted false})))
 
 (re-frame/register-handler
  :tab-changed

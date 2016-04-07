@@ -26,39 +26,46 @@
                 [com/single-dropdown
                  :width "300px"
                  :choices @all-tropes
-                 :model (nth @our-tropes n)
+                 :model (:id (nth @our-tropes n))
                  :filter-box? true
                  :on-change #(re-frame/dispatch [:change-trope n %])]]]))
 
-(defn char-select [role n]
+(defn char-select [role chars n]
   (let [
-        chars (re-frame/subscribe [:chars-for-archetype role])
-        our-tropes (re-frame/subscribe [:our-tropes])]
+        ;; chars (re-frame/subscribe [:chars-for-archetype role])
+        ;; our-tropes (re-frame/subscribe [:our-tropes])
+        ]
     [com/v-box
      :children [
-                [com/label :label (clojure.string/capitalize role)]
+                [com/label :label (clojure.string/capitalize role) :style {:font-size "smaller"}]
                 spacer
                 [com/single-dropdown
                  :width "200px"
-                 :choices @chars
+                 :choices chars
                  ;; TODO: make random
-                 :model (:id (first @chars))
+                 :model (:id (first chars))
                  :filter-box? true
                  :on-change #(change-trope)]]]))
 
 (defn characters [n]
   (let [
         archetypes (re-frame/subscribe [:archetypes n])
+        subverted (re-frame/subscribe [:subverted? n])
+        all-chars (re-frame/subscribe [:chars-for-archetypes @archetypes])
+        chars (if @subverted (reverse @all-chars) @all-chars)
+        p (println chars)
+        p (println @archetypes)
+        pairs (map vector @archetypes chars)
         ;; our-tropes (re-frame/subscribe [:our-tropes])
         ;; archetypes (:archetypes (nth @our-tropes n))
         ]
     (if-not (or (empty? @archetypes) (nil? @archetypes))
       [com/v-box
        :style {:padding "20px" :background-color "#ddddff" :border "#9999ff solid 2px"}
-       :children (into []
-                           (apply concat (for [x @archetypes]
-                                           [[char-select x n] spacer]))
-                           )
+       :children (concat [[com/label :label "Characters"] gap] (into []
+                             (apply concat (for [[x y] pairs]
+                                             [[char-select x y n] spacer]))
+                             ))
        ])
      ))
 
@@ -73,13 +80,14 @@
 
 
 (defn subvert-trope [n]
-  [com/h-box
-   :justify :center
-   :children [
-              [com/button
-               :class "btn-warning"
-               :label "Subvert"
-               :on-click #(re-frame/dispatch [:subvert-trope])]]]
+  (let [subverted (re-frame/subscribe [:subverted? n])]
+    [com/h-box
+     :justify :center
+     :children [
+                [com/button
+                 :class "btn-warning"
+                 :label (if @subverted "Un-subvert" "Subvert")
+                 :on-click #(re-frame/dispatch [:subvert-trope n])]]])
   )
 
 (defn remove-trope [n]
@@ -94,23 +102,29 @@
 
 ;; rewrite for nth and subscription
 (defn trope-box [n]
-              [com/v-box
-               :style {:background-color "#ddffdd"
-                       :border "2px solid #99ff99"}
-               :padding "10px"
-               :children [[trope-select n]
-                          gap
-                          [characters n]
-                          gap
-                          [com/h-box
-                           :justify :center
-                           :children [
-                                      [subvert-trope]
-                                      gap
-                                      (if (> n 0)
-                                        [remove-trope n])]]
-                          ]
-              ])
+  (let [
+        subverted (re-frame/subscribe [:subverted? n])
+        arches (re-frame/subscribe [:archetypes n])
+        ]
+    [com/v-box
+     :style (if @subverted {:background-color "#ffdddd" :border "#ff9999 solid 2px"}
+                {:background-color "#ddffdd"
+                 :border "2px solid #99ff99"})
+     :padding "10px"
+     :children [[trope-select n]
+                gap
+                [characters n]
+                gap
+                [com/h-box
+                 :justify :center
+                 :children [
+                            (if (> (count @arches) 1)
+                              [subvert-trope n])
+                            gap
+                            (if (> n 0)
+                              [remove-trope n])]]
+                ]
+     ]))
 
 (defn trope-boxes []
   (let [our-tropes (re-frame/subscribe [:our-tropes])]

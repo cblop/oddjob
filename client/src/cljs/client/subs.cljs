@@ -9,6 +9,20 @@
   (some #(= elm %) coll))
 
 (re-frame/register-sub
+ :subverted?
+ (fn [db [_ n]]
+   (let [trope (nth (:our-tropes @db) n)]
+     (reaction (:subverted trope)))))
+
+
+(re-frame/register-sub
+ :chars-for-archetypes
+ (fn [db [_ arches]]
+   (let [chars (map (fn [x] (filter #(in? (:archetypes %) x) (:characters @db))) arches)]
+     (reaction chars))
+   ))
+
+(re-frame/register-sub
  :chars-for-archetype
  (fn [db [_ arch]]
    (let [chars (filter #(in? (:archetypes %) arch) (:characters @db))]
@@ -18,7 +32,7 @@
 (re-frame/register-sub
  :archetypes
  (fn [db [_ n]]
-   (let [tropeid (nth (:our-tropes @db) n)
+   (let [tropeid (:id (nth (:our-tropes @db) n))
          archetypes (:archetypes (first (filter #(= tropeid (:id %)) (:tropes @db))))]
      (reaction archetypes))))
 
