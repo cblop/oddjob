@@ -1,0 +1,177 @@
+Identifier	Trope Name	Classification	Popularity
+C	Conflict	Structure	0.07
+3as	Three Act Structure	Structure	0.06
+Re	The Reveal	Structure	4.7
+Cmx	The Climax	Structure	0.08
+Den	The Dénouement	Structure	0.09
+End	The End	Structure	0.14
+Chk	Chekhov's Gun	Structure	5.3
+Mcg	MacGuffin	Structure	4.3
+Bks	Backstory	Structure	2.3
+Ret	Retcon	Structure	4
+Arc	Story Arc	Structure	1.5
+Rar	Romance Arc	Structure	0.08
+Tri	Love Triangle	Structure	2.6
+Hil	Hilarity Ensues	Structure	6
+Ae	An Aesop	Setting, Laws, Plots	3
+Srs	Serious Business	Setting, Laws, Plots	4
+Msq	The Masquerade	Setting, Laws, Plots	1.7
+Rcy	Recycled IN SPACE	Setting, Laws, Plots	3.2
+X	X Meets Y	Setting, Laws, Plots	2.3
+Aa	Magic A Is Magic A	Setting, Laws, Plots	0.75
+Ivc	Sliding Scale of Idealism vs. Cynicism	Setting, Laws, Plots	1.6
+Sq	Status Quo Is God	Setting, Laws, Plots	2
+Cal	Call To Adventure	Setting, Laws, Plots	0.43
+Rq	Redemption Quest	Setting, Laws, Plots	0.2
+Hj	The Hero's Journey	Setting, Laws, Plots	0.28
+Stw	Saving The World	Setting, Laws, Plots	0.38
+Tfc	They Fight Crime	Setting, Laws, Plots	0.58
+Anv	Anvilicious	Story Modifiers 	2.5
+Bti	Beyond The Impossible	Story Modifiers 	0.52
+Cl2	Crosses The Line Twice	Story Modifiers 	2.5
+Ria	Refuge in Audacity	Story Modifiers 	3
+Dae	Darker and Edgier 	Story Modifiers 	6
+Scw	Mind Screw	Story Modifiers 	5.5
+Aws	Mundane Made Awesome	Story Modifiers 	2.2
+Bwb	Fanservice	Story Modifiers 	5.7
+Cry	Tear Jerker	Story Modifiers 	12
+Ang	Wangst	Story Modifiers 	1.9
+Jts	Jumping The Shark	Story Modifiers 	0.9
+Gtb	Growing The Beard	Story Modifiers 	1.4
+Phl	Applied Phlebotinum	Plot Devices	3
+Tb	Techno Babble	Plot Devices	1.1
+Wav	Hand Wave	Plot Devices	3.4
+Dx	Deus Ex Machina	Plot Devices	2.4
+Ass	Ass Pull	Plot Devices	1.5
+Iac	Sealed Evil In A Can	Plot Devices	3.4
+Aod	Artifact Of Doom	Plot Devices	1.9
+Xan	Xanatos Gambit	Plot Devices	1.1
+Bdh	Big Damn Heroes	Plot Devices	6.1
+Pet	Pet The Dog	Plot Devices	4
+Kik	Kick The Dog	Plot Devices	5.8
+Hrz	Moral Event Horizon 	Plot Devices	6.2
+H	The Hero's Journey	Heroes	8.8
+Ah	Anti Hero	Heroes	5.6
+Ih	Idiot Hero	Heroes	2.4
+Sh	Superhero	Heroes	1.3
+Kh	Kid Hero	Heroes	1.3
+Gh	Guile Hero	Heroes	1.7
+Th	Tragic Hero	Heroes	0.47
+Kni	Knight In Shining Armour	Heroes	1.7
+Neo	The Chosen One	Heroes	3
+Ag	Action Girl	Heroes	9.1
+Pg	Plucky Girl	Heroes	1.9
+Det	The Determinator	Heroes	6.4
+Gb	Genius Bruiser	Heroes	2.3
+5ma	Five Man Band	Heroes	4
+Bbw	Badass Bookworm	Heroes	3
+Tp	Technical Pacifist	Heroes	1.2
+Ace	The Ace	Heroes	2.6
+Cap	The Captain	Heroes	1.6
+Gun	The Gunslinger	Heroes	1.2
+Ir	Intrepid	Heroes	1.1
+Ind	Adventurer Archeologist	Heroes	0.62
+P	Protagonist	Character Modifiers	0.72
+Ib	Idiot Ball	Character Modifiers	3.2
+Fln	Flanderization	Character Modifiers	2.5
+Bda	Badass	Character Modifiers	13
+Bbw	Berserk Button	Character Modifiers	10
+Jhg	Jerk With A Heart Of Gold	Character Modifiers	7.1
+Ja	Jerkass	Character Modifiers	16
+Sav	Genre Savvy	Character Modifiers	8.7
+Hft	Hell Face Turn	Character Modifiers	8.9
+A	Antagonist	Character Modifiers	0.06
+Wb	Woobie	Character Modifiers	7.5
+Ccl	Cloud Cuckoolander	Character Modifiers	9.8
+Ham	Large Ham	Character Modifiers	9.2
+Rnd	Rounded Character	Character Modifiers	0.11
+Fla	Flat Character	Character Modifiers	0.76
+Dyn	Dynamic Character	Character Modifiers	0.09
+Sta	Static Character	Character Modifiers	0.14
+Fht	Face Heel Turn	Character Modifiers	5.7
+Mad	Mad Scientist	Archetypes	6.6
+Sue	Mary Sue	Archetypes	2
+Moo	Mooks	Archetypes	6.4
+Red	Redshirts	Archetypes	2.1
+Mug	Muggles	Archetypes	1.4
+Scr	The Scrappy	Archetypes	3.9
+Edh	Ensemble Darkhorse	Archetypes	5.8
+Wes	Creator's Pet	Archetypes	1.2
+Tsu	Tsundere	Archetypes	5.6
+Dbd	Eccentric Mentor	Archetypes	0.51
+Mus	Dumb Muscle	Archetypes	1.8
+Gia	Gentle Giant	Archetypes	2.2
+Foo	The Fool	Archetypes	0.72
+Tc	Turncoat	Archetypes	0.23
+Scl	Star-Crossed Lovers	Archetypes	1.5
+St	The Storyteller	Archetypes	0.17
+Lei	Rebel Leader	Archetypes	0.4
+Mal	Rebellious Spirit	Archetypes	0.22
+Kz	The Klutz	Archetypes	0.59
+Lrg	Loveable Rogue	Archetypes	1.3
+Pmd	Person Of Mass Destruction	Archetypes	1.8
+Bad	Big Bad	Villains	23
+Mgb	Magnificent Bastard	Villains	6.7
+Mpb	Manipulative Bastard	Villains	6.2
+Chs	The Chessmaster	Villains	5.2
+Mon	Complete Monster	Villains	2.9
+Om	Omnicidal Maniac	Villains	3.1
+Kt	Knight Templar	Villains	4.1
+Etw	Evil Twin	Villains	2.4
+Ewi	Enemy Within	Villains	0.74
+Law	Amoral Attorney	Villains	0.71
+Ob	Obstructive Bureaucrat	Villains	1.4
+Ws	Wicked Stepmother	Villains	0.53
+Bru	The Brute	Villains	2.3
+Chi	Creepy Child	Villains	2.5
+Rch	Archenemy	Villains	2.6
+Dra	The Dragon	Villains	8.6
+Mol	The Mole	Villains	3.6
+Vir	The Virus	Villains	1.7
+Eld	Eldritch Abomination	Villains	8.7
+1wa	One Winged Angel	Villains	3.4
+Cce	Corrupt Corporate Executive	Villains	3.7
+Emp	The Empire	Villains	3
+Av	Anti-Villain	Villains	4
+Vp	Villain Protagonist	Villains	3.4
+4te	For The Evulz	Villains	3.9
+Lol	Evil Laugh	Villains	3.4
+Fai	You Have Failed Me	Villains	1.7
+Cat	Right-Hand Cat	Villains	0.37
+T	Trope	Metatropes	0.37
+Ls	Lampshade Hanging	Metatropes	19
+Jts	Justified Trope	Metatropes	6.4
+Sv	Subverted Trope	Metatropes	6.9
+Old	Oldest Ones In The Book	Metatropes	0.1
+Roc	Rule Of Cool	Metatropes	5.5
+Rof	Rule Of Funny	Metatropes	4.6
+Rod	Rule Of Drama	Metatropes	0.87
+4wl	The Fourth Wall	Metatropes	0.48
+Tru	Truth In Television	Metatropes	5.9
+Rur	Reality Is Unrealistic	Metatropes	1.2
+Lrg	Like Reality Unless Noted	Metatropes	0.15
+Anp	Anthropic Principle	Metatropes	0.11
+Con	Law Of Conservation Of Detail 	Metatropes	0.5
+Lah	Literary Agent Hypothesis	Metatropes	0.64
+Md	Moral Dissonance	Metatropes	0.84
+Tbl	Parodic Table Of The Elements	Metatropes	0.02
+Can	Canon	Production	1.2
+Sho	Shout Out	Production	19
+Tt	Take That	Production	7.2
+Res	Critical Research Failure	Production	1
+Vam	Viewers Are Morons	Production	1.3
+Wob	Writer On Board	Production	0.59
+Xm Rad	Executive Meddling	Production	4.6
+Rad	Getting Crap Past The Radar	Production	4.6
+Dh	Development Hell	Production	1.5
+Sbn	Screwed By The Network	Production	2.3
+Fan	Fanon	Fandom & Audience Reactions	1.8
+Sus	Willing Suspension of Disbelief	Fandom & Audience Reactions	0.95
+Fri	Fridge Logic	Fandom & Audience Reactions	7.7
+Etw	Epileptic	Fandom & Audience Reactions	2.1
+Dlp	Draco In Leather Pants	Fandom & Audience Reactions	1.8
+Mem	Memetic Mutation	Fandom & Audience Reactions	9.5
+Wog	Word Of God	Fandom & Audience Reactions	14
+Mst	MST3K Mantra	Fandom & Audience Reactions	1.1
+Sqi	Squick	Fandom & Audience Reactions	7.6
+Fwr	Freud Was Right	Fandom & Audience Reactions	1.6
