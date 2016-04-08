@@ -10,6 +10,7 @@
    :characters []
    :our-tropes [nil]
    :timeline []
+   :show false
    :story ""})
 
 

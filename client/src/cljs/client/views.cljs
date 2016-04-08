@@ -79,15 +79,47 @@
                :emphasise? true
                :on-click #(re-frame/dispatch [:add-trope])]]])
 
+
+(defn story-dialog []
+  (let [
+        story (re-frame/subscribe [:story])]
+    [com/v-box
+     :children [
+                [com/alert-box
+                 :id 1
+                 :alert-type :none
+                 :heading "Story"
+                 :body [:div (for [s @story] [:p s])]
+                 :closeable? false
+                 ]
+                [com/h-box
+                 :justify :center
+                 :children [
+                            [com/button
+                             :label "OK"
+                             :on-click #(re-frame/dispatch [:hide])]]]
+                ]]
+    ))
+
 (defn generate-story []
-  [com/h-box
-   :justify :center
-   :children [
-              [com/button
-               :class "btn-success"
-               :label "Generate Story!"
-               :on-click #(re-frame/dispatch [:generate-story])]
-              ]])
+  (let [show? (re-frame/subscribe [:show])]
+    [com/h-box
+     :justify :center
+     :children [
+                [com/button
+                 :class "btn-success"
+                 :label "Generate Story!"
+                 :on-click #(re-frame/dispatch [:generate-story])]
+                (when @show?
+                  [com/modal-panel
+                   :backdrop-color   "grey"
+                   :backdrop-opacity 0.4
+                   :wrap-nicely? true
+                   :style {:font-family "Consolas"}
+                   :child [story-dialog]
+                   ]
+                  )
+                ]]))
 
 
 (defn subvert-trope [n]
@@ -100,6 +132,7 @@
                  :label (if @subverted "Un-subvert" "Subvert")
                  :on-click #(re-frame/dispatch [:subvert-trope n])]]])
   )
+
 
 (defn remove-trope [n]
   [com/h-box
@@ -194,4 +227,5 @@
     [com/v-box
      :height "100%"
      :children [[title]
-                [content]]]))
+                [content]
+                ]]))

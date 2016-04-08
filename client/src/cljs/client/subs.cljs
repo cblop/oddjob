@@ -8,6 +8,10 @@
   [coll elm]
   (some #(= elm %) coll))
 
+(re-frame/register-sub
+ :show
+ (fn [db _]
+   (reaction (:show @db))))
 
 (re-frame/register-sub
  :story

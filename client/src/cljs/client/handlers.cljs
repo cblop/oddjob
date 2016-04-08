@@ -65,33 +65,69 @@
  (fn [db [_ response]]
    (assoc db :archetypes (:archetypes response))))
 
-
-
 (defn handler [response]
   (.log js/console (str response)))
 
 (defn error-handler [{:keys [status status-text]}]
   (.log js/console (str "something bad happened: " status " " status-text)))
 
+(defn gen-handler [response]
+  (do
+    (re-frame/dispatch [:story-map response])
+    (re-frame/dispatch [:show])))
+
+(re-frame/register-handler
+ :story-map
+ (fn [db [_ smap]]
+   (let [values (vals smap)
+         sorted (sort-by #(first (first %)) values)
+         phases (group-by #(first (first %)) values)
+         sorted (sort-by key phases)
+         sorts (mapcat (fn [x] (sort-by #(second (first %)) x)) (vals sorted))
+         x (println "SORTS: ")
+         p (println sorts)
+         ;; sorted ()
+         ;; story-s (map second sorted)
+         story-s (map second sorts)
+         story-string (map #(clojure.string/capitalize %) story-s)
+         p (println smap)
+         ]
+     (assoc db :story story-string))))
+
 (defn generate-story [chars]
   (POST (str host "/story")
       {:format :json
-       :keywords? true
+       ;; :keywords? true
        :response-format :json
-       :handler handler
+       :handler gen-handler
        :error-handler error-handler
-       :params {:chars chars}}))
+       :params {:chars (map #([% ""]) chars)}}))
 
 (re-frame/register-handler
  :generate-story
  (fn [db [_]]
-   ()
    (let [story
          (cond (some #(nil? %) (:our-tropes db)) (do (js/alert "One of your tropes is blank!") "")
                (some #(nil? %) (mapcat :chars (:our-tropes db))) (do (js/alert "One of your characters is blank!") "")
-               :else (generate-story (mapcat :chars (:our-tropes db))))]
+               :else (generate-story (mapcat :chars (:our-tropes db))))
+         ;; p (println story-string)
+         ]
+     db
      ;; PUT request to server
-     (assoc db :story story))))
+     ;; (assoc db :story story-string)
+     )))
+
+(re-frame/register-handler
+ :hide
+ (fn [db _]
+   (assoc db :show false)
+   ))
+
+(re-frame/register-handler
+ :show
+ (fn [db _]
+   (assoc db :show true)
+   ))
 
 (re-frame/register-handler
  :bad-response

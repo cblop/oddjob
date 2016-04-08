@@ -20,6 +20,8 @@ def story():
     data = request.get_json()
     chars = data['chars']
     story = storygen.storygen(chars)
+    print("Story:")
+    print(story)
     return jsonify(**story)
 
 @app.route("/tropes/")
