@@ -62,7 +62,8 @@ def get_chars():
                 arches.append(thing['roles'][1])
         if not item[-1] == '':
             for wotsit in string_list(item[-1]):
-                arches.append(wotsit)
+                if not (wotsit == ""):
+                    arches.append(wotsit)
         chars.append({'id': slugify(item[0]), 'label': item[0], 'archetypes': list(set(arches))})
     return chars
 
@@ -70,11 +71,20 @@ def get_chars():
 def get_tropes():
     tropes = []
     for item in tropelist[1:]:
+        arches = []
         if not item[0] == '':
             if (item[2] == 'Heroes') or (item[2] == 'Archetypes') or (item[2] == 'Villains'):
-                tropes.append({'id': item[0], 'label': item[1], 'archetypes': [item[0]]})
+                for thing in noc[1:]:
+                    if thing[-1] == item[0]:
+                        arches.append(item[0])
+        if len(arches) > 0:
+            tropes.append({'id': item[0], 'label': item[1], 'archetypes': list(set(arches))})
+
     for item in multi_tropelist:
-        tropes.append({'id': slugify(item[0]), 'label': item[0], 'archetypes': [map(slugify, item[1])]})
+        # arches = []
+        # for a in item[1]:
+        #     arches.append(slugify(a))
+        tropes.append({'id': slugify(item[0]), 'label': item[0], 'archetypes': item[1]})
     return tropes
 
 def get_archetypes():

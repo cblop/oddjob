@@ -44,7 +44,6 @@
 (re-frame/register-handler
  :load-tropes-handler
  (fn [db [_ response]]
-   (println (:tropes response))
    (assoc db :tropes (:tropes response))))
 
 
