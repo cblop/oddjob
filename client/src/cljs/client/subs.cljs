@@ -8,6 +8,12 @@
   [coll elm]
   (some #(= elm %) coll))
 
+
+(re-frame/register-sub
+ :story
+ (fn [db _]
+   (reaction (:story @db))))
+
 (re-frame/register-sub
  :subverted?
  (fn [db [_ n]]

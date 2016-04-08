@@ -19,7 +19,7 @@ charlist = get_chars()
 def story():
     data = request.get_json()
     chars = data['chars']
-    story = storygen(chars)
+    story = storygen.storygen(chars)
     return jsonify(**story)
 
 @app.route("/tropes/")

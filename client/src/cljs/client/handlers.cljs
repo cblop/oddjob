@@ -86,11 +86,12 @@
  :generate-story
  (fn [db [_]]
    ()
-   (cond (some #(nil? %) (:our-tropes db)) (js/alert "One of your tropes is blank!")
-         (some #(nil? %) (mapcat :chars (:our-tropes db))) (js/alert "One of your characters is blank!")
-         :else (generate-story (mapcat :chars (:our-tropes db))))
-   ;; PUT request to server
-   db))
+   (let [story
+         (cond (some #(nil? %) (:our-tropes db)) (do (js/alert "One of your tropes is blank!") "")
+               (some #(nil? %) (mapcat :chars (:our-tropes db))) (do (js/alert "One of your characters is blank!") "")
+               :else (generate-story (mapcat :chars (:our-tropes db))))]
+     ;; PUT request to server
+     (assoc db :story story))))
 
 (re-frame/register-handler
  :bad-response
