@@ -43,9 +43,10 @@
                  :width "200px"
                  :choices chars
                  ;; TODO: make random
-                 :model (:id (first chars))
+                 ;; :model (:id (first chars))
+                 :model nil
                  :filter-box? true
-                 :on-change #(change-trope)]]]))
+                 :on-change #(re-frame/dispatch [:change-char n %])]]]))
 
 (defn characters [n]
   (let [
@@ -53,8 +54,8 @@
         subverted (re-frame/subscribe [:subverted? n])
         all-chars (re-frame/subscribe [:chars-for-archetypes @archetypes])
         chars (if @subverted (reverse @all-chars) @all-chars)
-        p (println chars)
-        p (println @archetypes)
+        ;; p (println chars)
+        ;; p (println @archetypes)
         pairs (map vector @archetypes chars)
         ;; our-tropes (re-frame/subscribe [:our-tropes])
         ;; archetypes (:archetypes (nth @our-tropes n))
@@ -77,6 +78,16 @@
                :md-icon-name "zmdi-plus"
                :emphasise? true
                :on-click #(re-frame/dispatch [:add-trope])]]])
+
+(defn generate-story []
+  [com/h-box
+   :justify :center
+   :children [
+              [com/button
+               :class "btn-success"
+               :label "Generate Story!"
+               :on-click #(re-frame/dispatch [:generate-story])]
+              ]])
 
 
 (defn subvert-trope [n]
@@ -140,7 +151,12 @@
                :width "500px"
                :children [
                           [trope-boxes]
-                          [add-trope]]]]])
+                          [add-trope]
+                          gap
+                          gap
+                          gap
+                          gap
+                          [generate-story]]]]])
 
 (defn timeline-content [])
 
@@ -168,7 +184,7 @@
        :justify :center
        :children [
                   [com/title
-                   :label "OddJob's Subversive Stories"
+                   :label "OddJob's Subversive Story Hat"
                    :level :level1]
                   ]
        ]))

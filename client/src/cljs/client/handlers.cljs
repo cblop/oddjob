@@ -23,7 +23,15 @@
 (re-frame/register-handler
  :change-trope
  (fn [db [_ n id]]
+   (println (:our-tropes db))
    (assoc db :our-tropes (assoc (:our-tropes db) n {:id id :subverted false}))))
+
+
+(re-frame/register-handler
+ :change-char
+ (fn [db [_ n id]]
+   (let [chars (:chars (nth (:our-tropes db) n))]
+     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :chars] (conj chars id))))))
 
 (re-frame/register-handler
  :remove-trope
@@ -57,6 +65,14 @@
  (fn [db [_ response]]
    (assoc db :archetypes (:archetypes response))))
 
+(re-frame/register-handler
+ :generate-story
+ (fn [db [_]]
+   (cond (some #(nil? %) (:our-tropes db)) (js/alert "One of your tropes is blank!")
+         (some #(nil? %) (mapcat :chars (:our-tropes db))) (js/alert "One of your characters is blank!")
+         :else (js/alert (:our-tropes db)))
+   ;; PUT request to server
+   db))
 
 (re-frame/register-handler
  :bad-response
