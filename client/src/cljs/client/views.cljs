@@ -153,11 +153,14 @@
      :tabs tab-list
      :on-change #(re-frame/dispatch [:tab-changed %])]))
 
+;; (defn content []
+;;   (let [current-tab (re-frame/subscribe [:current-tab])]
+;;     (cond (= @current-tab :tab1) [trope-content]
+;;           (= @current-tab :tab2) [timeline-content]
+;;           (= @current-tab :tab3) [story-content])))
+
 (defn content []
-  (let [current-tab (re-frame/subscribe [:current-tab])]
-    (cond (= @current-tab :tab1) [trope-content]
-          (= @current-tab :tab2) [timeline-content]
-          (= @current-tab :tab3) [story-content])))
+  [trope-content])
 
 (defn title []
     (fn []
@@ -175,5 +178,4 @@
     [com/v-box
      :height "100%"
      :children [[title]
-                [tabs]
                 [content]]]))

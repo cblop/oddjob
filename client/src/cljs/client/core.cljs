@@ -14,5 +14,8 @@
                   (.getElementById js/document "app")))
 
 (defn ^:export init [] 
-  (re-frame/dispatch-sync [:initialize-db])
+  (re-frame/dispatch [:initialize-db])
+  (re-frame/dispatch [:load-tropes])
+  (re-frame/dispatch [:load-characters])
+  (re-frame/dispatch [:load-archetypes])
   (mount-root))

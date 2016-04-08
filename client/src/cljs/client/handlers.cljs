@@ -1,7 +1,10 @@
 (ns client.handlers
     (:require [re-frame.core :as re-frame]
+              [ajax.core :refer [GET POST]]
               [client.db :as db]))
 
+
+(def host "http://localhost:5000")
 
 (defn drop-nth [n coll]
   (keep-indexed #(if (not= %1 n) %2) coll))
@@ -39,6 +42,60 @@
    (assoc db :current-tab tab-id)))
 
 (re-frame/register-handler
+ :load-tropes-handler
+ (fn [db [_ response]]
+   (println (:tropes response))
+   (assoc db :tropes (:tropes response))))
+
+
+(re-frame/register-handler
+ :load-chars-handler
+ (fn [db [_ response]]
+   (assoc db :characters (:characters response))))
+
+(re-frame/register-handler
+ :load-arches-handler
+ (fn [db [_ response]]
+   (assoc db :archetypes (:archetypes response))))
+
+
+(re-frame/register-handler
+ :bad-response
+ (fn [db [_ response]]
+   (println (str "BAD RESPONSE: " response))
+   db
+   ))
+
+(re-frame/register-handler
+ :load-tropes
+ (fn [db _]
+   (GET (str host "/tropes/") {:handler #(re-frame/dispatch [:load-tropes-handler %1])
+                               :bad-response #(re-frame/dispatch [:bad-response %1])
+                               :response-format :json
+                               :keywords? true})
+   db))
+
+
+(re-frame/register-handler
+ :load-characters
+ (fn [db _]
+   (GET (str host "/characters/") {:handler #(re-frame/dispatch [:load-chars-handler %1])
+                                   :bad-response #(re-frame/dispatch [:bad-response %1])
+                                   :response-format :json
+                                   :keywords? true})
+   db))
+
+
+(re-frame/register-handler
+ :load-archetypes
+ (fn [db _]
+   (GET (str host "/archetypes/") {:handler #(re-frame/dispatch [:load-arches-handler %1])
+                                   :bad-response #(re-frame/dispatch [:bad-response %1])
+                                   :response-format :json
+                                   :keywords? true})
+   db))
+
+(re-frame/register-handler
  :initialize-db
  (fn  [_ _]
-   db/default-db))
+     db/default-db))
