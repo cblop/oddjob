@@ -1,5 +1,9 @@
 from flask import Flask, jsonify, request
 # from flask.ext.transit import init_transit
+# import sys
+# sys.path.insert(0, '../clingo')
+# sys.path.insert(0, '~/clingo')
+import storygen
 from tropes import get_chars, get_archetypes, get_tropes
 app = Flask(__name__)
 
@@ -14,8 +18,8 @@ charlist = get_chars()
 @app.route("/story", methods = ["POST"])
 def story():
     data = request.get_json()
-    print(data['chars'])
-    story = {'test': 'story'}
+    chars = data['chars']
+    story = storygen(chars)
     return jsonify(**story)
 
 @app.route("/tropes/")
