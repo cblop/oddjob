@@ -65,12 +65,30 @@
  (fn [db [_ response]]
    (assoc db :archetypes (:archetypes response))))
 
+
+
+(defn handler [response]
+  (.log js/console (str response)))
+
+(defn error-handler [{:keys [status status-text]}]
+  (.log js/console (str "something bad happened: " status " " status-text)))
+
+(defn generate-story [chars]
+  (POST (str host "/story")
+      {:format :json
+       :keywords? true
+       :response-format :json
+       :handler handler
+       :error-handler error-handler
+       :params {:chars chars}}))
+
 (re-frame/register-handler
  :generate-story
  (fn [db [_]]
+   ()
    (cond (some #(nil? %) (:our-tropes db)) (js/alert "One of your tropes is blank!")
          (some #(nil? %) (mapcat :chars (:our-tropes db))) (js/alert "One of your characters is blank!")
-         :else (js/alert (:our-tropes db)))
+         :else (generate-story (mapcat :chars (:our-tropes db))))
    ;; PUT request to server
    db))
 

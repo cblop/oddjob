@@ -14,7 +14,6 @@
    (let [trope (nth (:our-tropes @db) n)]
      (reaction (:subverted trope)))))
 
-
 (re-frame/register-sub
  :chars-for-archetypes
  (fn [db [_ arches]]

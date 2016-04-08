@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+# from flask.ext.transit import init_transit
 from tropes import get_chars, get_archetypes, get_tropes
 app = Flask(__name__)
 
@@ -9,6 +10,13 @@ def hello():
 tropelist = get_tropes()
 archlist = get_archetypes()
 charlist = get_chars()
+
+@app.route("/story", methods = ["POST"])
+def story():
+    data = request.get_json()
+    print(data['chars'])
+    story = {'test': 'story'}
+    return jsonify(**story)
 
 @app.route("/tropes/")
 def tropes():
