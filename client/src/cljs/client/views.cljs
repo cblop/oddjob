@@ -30,10 +30,11 @@
                  :filter-box? true
                  :on-change #(re-frame/dispatch [:change-trope n %])]]]))
 
-(defn char-select [role chars n]
+(defn char-select [role chars sel n]
   (let [
         ;; chars (re-frame/subscribe [:chars-for-archetype role])
-        our-tropes (re-frame/subscribe [:our-tropes])
+        ;; our-tropes (re-frame/subscribe [:our-tropes])
+        ;; this-trope (nth @our-tropes n)
         ]
     [com/v-box
      :children [
@@ -43,8 +44,8 @@
                  :width "200px"
                  :choices chars
                  ;; TODO: make random
-                 ;; :model (:id (first chars))
-                 :model nil
+                 :model (:id sel)
+                 ;; :model nil
                  :filter-box? true
                  :on-change #(re-frame/dispatch [:change-char n % role])]]]))
 
@@ -53,10 +54,13 @@
         archetypes (re-frame/subscribe [:archetypes n])
         subverted (re-frame/subscribe [:subverted? n])
         all-chars (re-frame/subscribe [:chars-for-archetypes @archetypes])
-        chars (if @subverted (reverse @all-chars) @all-chars)
+        our-tropes (re-frame/subscribe [:our-tropes])
+        sel-chars (:chars (nth @our-tropes n))
+        ;; s-chars (if (nil? sel-chars) (take (count @archetypes) (repeat nil)) sel-chars)
+        ;; chars (if @subverted (reverse @all-chars) @all-chars)
         ;; p (println chars)
         ;; p (println @archetypes)
-        pairs (map vector @archetypes chars)
+        triples (map vector (set @archetypes) (set @all-chars) sel-chars)
         ;; our-tropes (re-frame/subscribe [:our-tropes])
         ;; archetypes (:archetypes (nth @our-tropes n))
         ]
@@ -64,8 +68,8 @@
       [com/v-box
        :style {:padding "20px" :background-color "#ddddff" :border "#9999ff solid 2px"}
        :children (concat [[com/label :label "Characters"] gap] (into []
-                             (apply concat (for [[x y] pairs]
-                                             [[char-select x y n] spacer]))
+                             (apply concat (for [[x y z] triples]
+                                             [[char-select x y z n] spacer]))
                              ))
        ])
      ))

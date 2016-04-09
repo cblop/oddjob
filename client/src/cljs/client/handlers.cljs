@@ -17,22 +17,37 @@
 (re-frame/register-handler
  :subvert-trope
  (fn [db [_ n]]
-   (let [sub (:subverted (nth (:our-tropes db) n))]
-     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :subverted] (not sub))))))
+   (let [sub (:subverted (nth (:our-tropes db) n))
+         ;; p (println (nth (:our-tropes db) n))
+         old-chars (:chars (nth (:our-tropes db) n))
+         roles (map :role old-chars)
+         new-chars (map #(assoc %1 :role %2) old-chars (reverse roles))]
+     (assoc db :our-tropes
+            (-> (:our-tropes db)
+                (assoc-in [n :chars] new-chars)
+                (assoc-in [n :subverted] (not sub))))
+         )))
 
 (re-frame/register-handler
  :change-trope
  (fn [db [_ n id]]
-   (println (:our-tropes db))
-   (assoc db :our-tropes (assoc (:our-tropes db) n {:id id :subverted false}))))
+   (let [trope (first (filter #(= (:id %) id) (:tropes db)))
+         arches (:archetypes trope)]
+     ;; (println (:our-tropes db))
+     (assoc db :our-tropes (assoc (:our-tropes db) n {:id id :subverted false :chars (into [] (take (count arches) (repeat nil)))})))))
 
+(defn indices [pred coll]
+  (keep-indexed #(when (pred %2) %1) coll))
 
 (re-frame/register-handler
  :change-char
  (fn [db [_ n id role]]
-   (let [chars (:chars (nth (:our-tropes db) n))
+   (let [trope (nth (:our-tropes db) n)
+         chars (:chars trope)
+         tro (first (filter #(= (:id %) (:id trope)) (:tropes db)))
+         i (first (indices #(= % role) (:archetypes tro)))
          charname (re-frame/subscribe [:charname-for-id id])]
-     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :chars] (conj chars {:id id :name @charname :role role}))))))
+     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :chars] (assoc chars i {:id id :name @charname :role role}))))))
 
 (re-frame/register-handler
  :remove-trope

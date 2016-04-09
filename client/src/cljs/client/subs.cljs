@@ -45,6 +45,7 @@
          archetypes (:archetypes (first (filter #(= tropeid (:id %)) (:tropes @db))))]
      (reaction archetypes))))
 
+
 (re-frame/register-sub
  :our-tropes
  (fn [db _]
