@@ -48,6 +48,12 @@ def get_trope_actions(tropename, roles, wordlist):
 def lists_overlap(a, b):
     return bool(set(a) & set(b))
 
+def trope_label(id):
+    for item in tropelist:
+        if item[0] == id:
+            return item[1]
+
+
 def get_chars():
     chars = []
     tropeactions = []
@@ -64,7 +70,7 @@ def get_chars():
         if not item[-1] == '':
             for wotsit in string_list(item[-1]):
                 if not (wotsit == ""):
-                    arches.append(wotsit)
+                    arches.append(trope_label(wotsit))
         chars.append({'id': slugify(item[0]), 'label': item[0], 'archetypes': list(set(arches))})
     return chars
 
@@ -77,7 +83,7 @@ def get_tropes():
             if (item[2] == 'Heroes') or (item[2] == 'Archetypes') or (item[2] == 'Villains'):
                 for thing in noc[1:]:
                     if thing[-1] == item[0]:
-                        arches.append(item[0])
+                        arches.append(item[1])
         if len(arches) > 0:
             tropes.append({'id': item[0], 'label': item[1], 'archetypes': list(set(arches))})
 

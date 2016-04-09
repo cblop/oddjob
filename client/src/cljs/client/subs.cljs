@@ -60,6 +60,19 @@
  (fn [db _]
    (reaction (:tropes @db))))
 
+
+(re-frame/register-sub
+ :charname-for-id
+ (fn [db [_ id]]
+   (let [match (first (filter #(= id (:id %)) (:characters @db)))]
+     (reaction (:label match)))))
+
+(re-frame/register-sub
+ :trope-for-id
+ (fn [db [_ id]]
+   (let [match (first (filter #(= id (:id %)) (:tropes @db)))]
+     (reaction match))))
+
 (re-frame/register-sub
  :current-tab
  (fn [db _]

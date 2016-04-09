@@ -33,11 +33,11 @@
 (defn char-select [role chars n]
   (let [
         ;; chars (re-frame/subscribe [:chars-for-archetype role])
-        ;; our-tropes (re-frame/subscribe [:our-tropes])
+        our-tropes (re-frame/subscribe [:our-tropes])
         ]
     [com/v-box
      :children [
-                [com/label :label (clojure.string/capitalize role) :style {:font-size "smaller"}]
+                [com/label :label role :style {:font-size "smaller"}]
                 spacer
                 [com/single-dropdown
                  :width "200px"
@@ -46,7 +46,7 @@
                  ;; :model (:id (first chars))
                  :model nil
                  :filter-box? true
-                 :on-change #(re-frame/dispatch [:change-char n %])]]]))
+                 :on-change #(re-frame/dispatch [:change-char n % role])]]]))
 
 (defn characters [n]
   (let [

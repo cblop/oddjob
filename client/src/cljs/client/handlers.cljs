@@ -29,9 +29,10 @@
 
 (re-frame/register-handler
  :change-char
- (fn [db [_ n id]]
-   (let [chars (:chars (nth (:our-tropes db) n))]
-     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :chars] (conj chars id))))))
+ (fn [db [_ n id role]]
+   (let [chars (:chars (nth (:our-tropes db) n))
+         charname (re-frame/subscribe [:charname-for-id id])]
+     (assoc db :our-tropes (assoc-in (:our-tropes db) [n :chars] (conj chars {:id id :name @charname :role role}))))))
 
 (re-frame/register-handler
  :remove-trope
@@ -95,13 +96,17 @@
      (assoc db :story story-string))))
 
 (defn generate-story [chars]
-  (POST (str host "/story")
-      {:format :json
-       ;; :keywords? true
-       :response-format :json
-       :handler gen-handler
-       :error-handler error-handler
-       :params {:chars (map #([% ""]) chars)}}))
+  (let [nchars (map #(vector (:name %) (:role %)) chars)]
+    (println nchars)
+    (POST (str host "/story")
+        {:format :json
+         ;; :keywords? true
+         :response-format :json
+         :handler gen-handler
+         :error-handler error-handler
+         ;; :params {:chars chars}
+         :params {:chars nchars}
+         })))
 
 (re-frame/register-handler
  :generate-story
