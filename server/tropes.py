@@ -4,22 +4,19 @@ from slugify import slugify
 
 
 multi_tropelist = [
-    ["Conflict", ["Hero", "Villain"], ["fight", "conflict", "are_defeated_by", "underestimate", "fight_against", "are_arrested_by", "are_investigated_by", "are_wanted_by", "defeat", "hit", "are_threatened_by"]],
-    ["Climax", ["Hero", "Villain"], ["fight", "confront", "are_defeated_by", "are_arrested_by", "defeat"]],
-    ["Demonic Possession", ["Demon", "Priest"], ["exorcized", "are_fought_by", "fight", "cast_out", "are_banished_by"]],
-    ["Fugitive Arc", ["Fugitive", "Hunter"], ["are_hunted_by", "hunt", "stalk", "chase", "chase_after", "capture", "track_down", "catch", "lay_a_trap_for", "search_for"]],
+    ["Conflict", ["Hero", "Villain"], ["fight", "conflict"]],
+    ["Climax", ["Hero", "Villain"], ["fight", "confront"]],
+    ["Demonic Possession", ["Demon", "Priest"], ["exorcized"]],
+    ["Fugitive Arc", ["Fugitive", "Hunter"], ["are_hunted_by"]],
     ["Blackmail", ["Blackmailer", "Blackmailee"], ["blackmail"]],
-    ["The Obi-Wan", ["Mentor", "Student"], ["mentor", "guide", "advise", "are_inspired_by", "lose_faith_in", "lose_control_over", "are_disappointed_by", "are_rebuked_by", "fight_against", "counsel", "educate", "are_trained_by", "study_under", "look_up_to", "are_mentored_by"]],
+    ["The Obi-Wan", ["Mentor", "Mentee"], ["mentor"]],
     ["Professional Butt-Kisser", ["Butt-kisser", "Butt-kissee"], ["kiss_up_to"]],
     ["MacGuffin", ["Hero", "MacGuffin"], ["search_for"]],
-    ["Et Tu, Brute?", ["Traitor", "Fool"], ["turn_against", "betray", "monitor", "spread_lies_about", "undermine", "take_advantage_of", "trick", "fool", "mock"]],
-    # ["Love Triangle", [["Lover A", "Lover C"], ["Lover A", "Lover B"]], ["cheat_with", "cheat_on"]],
-    ["Film Noir", ["Suspect", "Detective"], ["investigated", "interview", "apprehend", "pursue", "chase", "grow_suspicious_of", "interrogate", "listen_to", "speak_to"]],
-    ["Evil Empire", ["Empire Leader", "Rebel"], ["suppress", "repress", "are_deposed_by", "are_toppled_by", "imprison", "fight_against"]],
-    # ["Hero's Journey", ["Hero"] ["search_for", "travel", "journey"]],
-    ["Romance Arc", ["Lady", "Gentleman"], ["seduce", "cheat_on", "encourage", "woo", "love", "date", "break_up_with", "divorce", "marry", "are_loved_by", "are_wooed_by", "are_pursued_by", "attract"]],
-    ["Sealed Evil In A Can", ["Hero", "Monster"], ["fight", "confront", "turn_against", "are_exploited_by", "are_killed_by", "are_manipulated_by", "kill_for"]],
-    # ["Damsel in Distress", ["Hero", "Damsel"], ["rescue"]]
+    ["Et Tu, Brute?", ["Betrayer", "Betrayee"], ["turn_against", "betray"]],
+    ["Film Noir", ["Suspect", "Detective"], ["investigated"]],
+    ["Evil Empire", ["Empire Leader", "Rebel"], ["suppress", "repress"]],
+    ["Romance Arc", ["Seducee", "Seducer"], ["seduce", "woo", "love"]],
+    ["Sealed Evil In A Can", ["Hero", "Monster"], ["are_exploited_by"]],
 ]
 
 tropelist = tsv.read_tsv('tropes.tsv')
